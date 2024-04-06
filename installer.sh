@@ -541,6 +541,15 @@ wings_full(){
         echo "    on the Panel and restart Wings after."
         echo ""
 
+        if [ "$INSTALLBOTH" = "true" ]; then
+            INSTALLBOTH="0"
+            finish
+            fi
+    else
+        #echo "[!] Your OS is not supported for installing Wings with this installer"
+    fi
+}
+
 wings_fqdn(){
     echo "[!] Please enter your FQDN if you want to install a SSL certificate. If not, press enter and leave this blank."
     read -r WINGS_FQDN
